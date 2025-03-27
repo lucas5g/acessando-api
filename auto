@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source .env
+
+message=$1
+
+git add .
+git commit -m "$message"
+git push
+
+sshpass -p $SERVER_KEY ssh -t root@acessando.app.br "\
+  cd projects/acessando-api &&\
+  source ~/.zshrc &&\
+  git pull &&\
+  pm2 restart acessando-api --update-env
+"%  
