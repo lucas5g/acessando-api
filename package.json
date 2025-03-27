@@ -1,0 +1,19 @@
+{
+  "name": "acessando-api",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "dev":"bun --watch src/index"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "elysia": "^1.2.25"
+  }
+}
